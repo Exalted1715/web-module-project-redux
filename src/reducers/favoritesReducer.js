@@ -16,14 +16,14 @@ const favoritesReducer = (state = initialState, action) => {
         case(ADD_FAVORITE):{
             return{
                 ...state,
-                favorites: [...satisfies.favorites, action.payload]
+                favorites: [...state.favorites, action.payload]
             }
         }
 
         case(REMOVE_FAVORITE):{
             return{
                 ...state,
-                favorites: state.filter(item=>(item.id !== action.payload))
+                favorites: state.favorites.filter(item=>(item.id !== action.payload))
             }
         }
         default:
